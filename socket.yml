@@ -1,0 +1,48 @@
+name: brreg
+description: Integration with The Brønnøysund Register Centre API
+version: 0.0.1
+keywords:
+  - brreg
+  - company
+  - norwegian
+  - registry
+
+endpoints:
+  check-name:
+    description: Check if the given company name exist
+    file: scripts/check-name.js
+    parameters:
+      name:
+        type: string
+        description: Name of the company to check
+        example: Eyedea AS
+    response:
+      mimetype: application/json
+      examples:
+        -
+          exit_code: 200
+          description: Success
+          example: {}
+        -
+          exit_code: 400
+          description: Failed
+          example: {}
+  get:
+    description: Get company by org number
+    file: scripts/get.js
+    parameters:
+      orgNumber:
+        type: string
+        description: Org. number of the company to get
+        example: 98293120821
+    response:
+      mimetype: application/json
+      examples:
+        -
+          exit_code: 200
+          description: Success
+          example: {}
+        -
+          exit_code: 400
+          description: Failed
+          example: {}
