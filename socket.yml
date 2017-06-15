@@ -1,12 +1,11 @@
 name: brreg
 description: Integration with The Brønnøysund Register Centre API
-version: 0.0.1
+version: 0.0.2
 keywords:
   - brreg
   - company
   - norwegian
   - registry
-
 endpoints:
   check-name:
     description: Check if the given company name exist
@@ -19,12 +18,10 @@ endpoints:
     response:
       mimetype: application/json
       examples:
-        -
-          exit_code: 200
+        - exit_code: 200
           description: Success
           example: {}
-        -
-          exit_code: 400
+        - exit_code: 400
           description: Failed
           example: {}
   get:
@@ -38,11 +35,9 @@ endpoints:
     response:
       mimetype: application/json
       examples:
-        -
-          exit_code: 200
+        - exit_code: 200
           description: Success
           example: {}
-        -
-          exit_code: 400
+        - exit_code: 400
           description: Failed
           example: {}
