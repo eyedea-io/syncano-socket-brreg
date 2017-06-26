@@ -1,6 +1,6 @@
 name: brreg
 description: Integration with The Brønnøysund Register Centre API
-version: 0.0.2
+version: 0.0.3
 keywords:
   - brreg
   - company
