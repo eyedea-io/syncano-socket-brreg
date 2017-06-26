@@ -1,16 +1,14 @@
 import axios from 'axios'
-import {response} from 'syncano-server'
+import {response, logger} from 'syncano-server'
 
 
+const {debug} = logger('check-name')
 const {orgNumber} = ARGS
 const url = `http://data.brreg.no/enhetsregisteret/enhet/${orgNumber}.json`
 
-axios({
-  baseURL: url,
-  method: 'get',
-})
+axios({url})
   .then(res => res.data)
-  .then(({data: [company]}) => {
+  .then(company => {
     response.json({
       orgNumber: company.organisasjonsnummer,
       name: company.navn,
@@ -21,4 +19,6 @@ axios({
       }
     })
   })
-  .catch(err => response.json({message: 'Company was not found.'}, 400))
+  .catch(err => {
+    response.json({message: 'Company was not found.'}, 400)
+  })
