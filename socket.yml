@@ -1,6 +1,6 @@
 name: brreg
 description: Integration with The Brønnøysund Register Centre API
-version: 0.0.3
+version: 0.0.4
 keywords:
   - brreg
   - company
@@ -23,12 +23,12 @@ endpoints:
             type: bool
             description: Param which indicates if company exist or not
       error:
-          exit_code: 400
-          description: Failed
-          parameters:
-            msg:
-              type: bool
-              description: Error message
+        exit_code: 400
+        description: Failed
+        parameters:
+          msg:
+            type: bool
+            description: Error message
   get:
     description: Get company by org number
     file: scripts/get.js
