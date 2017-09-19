@@ -16,14 +16,19 @@ endpoints:
         description: Name of the company to check
         example: Eyedea AS
     response:
-      mimetype: application/json
-      examples:
-        - exit_code: 200
-          description: Success
-          example: {}
-        - exit_code: 400
+      success:
+        description: Success
+        parameters:
+          exist:
+            type: bool
+            description: Param which indicates if company exist or not
+      error:
+          exit_code: 400
           description: Failed
-          example: {}
+          parameters:
+            msg:
+              type: bool
+              description: Error message
   get:
     description: Get company by org number
     file: scripts/get.js

@@ -1,22 +1,28 @@
 {
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.16.2",
-    "syncano-server": "beta"
+    "syncano-server": "gamma"
   },
   "scripts": {
-    "e2e": "cross-env NODE_ENV=test mocha 'tests/*.js' --reporter spec --require babel-register --timeout 4000"
+    "test": "yarn && cross-env NODE_ENV=test mocha -s 400 'test/*.test.js' --reporter spec --require babel-register --timeout 4000",
+    "test:coverage": "nyc --produce-source-map=true npm run test"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.22.0",
-    "babel-register": "^6.22.0",
-    "chai": "^3.5.0",
-    "chai-as-promised": "^6.0.0",
-    "cross-env": "^3.1.4",
-    "mocha": "^3.2.0"
+    "syncano-test": "^0.1.5",
+    "babel-core": "^6.26.0",
+    "chai": "^4.1.2"
   },
   "babel": {
     "presets": [
-      "es2015"
+      [
+        "env",
+        {
+          "targets": {
+            "node": "7"
+          }
+        }
+      ]
     ]
   }
 }
