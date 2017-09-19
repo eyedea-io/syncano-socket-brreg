@@ -9,9 +9,10 @@
     "test:coverage": "nyc --produce-source-map=true npm run test"
   },
   "devDependencies": {
-    "syncano-test": "^0.1.5",
     "babel-core": "^6.26.0",
-    "chai": "^4.1.2"
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "syncano-test": "^0.1.5"
   },
   "babel": {
     "presets": [
