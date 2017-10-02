@@ -1,8 +1,7 @@
 import axios from 'axios'
 import Syncano from 'syncano-server'
 
-
-export default function run(ctx) {
+export default (ctx) => {
   const {response, logger} = Syncano(ctx)
   const {debug} = logger('get')
   const {orgNumber} = ctx.args
@@ -11,17 +10,18 @@ export default function run(ctx) {
   return axios({url})
     .then(res => res.data)
     .then(company => {
+      debug('got company:', company)
       response.json({
         orgNumber: company.organisasjonsnummer,
         name: company.navn,
         address: {
           address: company.forretningsadresse.adresse,
           postNumber: company.forretningsadresse.postnummer,
-          city: company.forretningsadresse.poststed,
+          city: company.forretningsadresse.poststed
         }
       })
     })
-    .catch(err => {
+    .catch(() => {
       response.json({msg: 'Company was not found.'}, 400)
     })
 }

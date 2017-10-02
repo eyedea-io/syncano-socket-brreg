@@ -1,10 +1,9 @@
 import axios from 'axios'
 import Syncano from 'syncano-server'
 
-
 const url = `http://data.brreg.no/enhetsregisteret/enhet.json`
 
-export default function run(ctx) {
+export default (ctx) => {
   const {response, logger} = Syncano(ctx)
   const {debug} = logger('check-name')
 

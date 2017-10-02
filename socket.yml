@@ -9,7 +9,7 @@ keywords:
 endpoints:
   check-name:
     description: Check if the given company name exist
-    file: scripts/check-name.js
+    file: check-name.js
     parameters:
       name:
         type: string
@@ -31,7 +31,7 @@ endpoints:
             description: Error message
   get:
     description: Get company by org number
-    file: scripts/get.js
+    file: get.js
     parameters:
       orgNumber:
         type: string
