@@ -1,11 +1,8 @@
-import _ from 'lodash'
-import crypto from 'crypto'
+/* global describe it */
 import {assert} from 'chai'
 import {run} from 'syncano-test'
 
-
-describe('check-name', function() {
-
+describe('check-name', function () {
   let existingCompany = {
     orgNumber: 915642349,
     name: 'Eyedea AS'
@@ -16,8 +13,7 @@ describe('check-name', function() {
     name: 'Eyeeeedea AS'
   }
 
-
-  it('check name of existing company', function(done) {
+  it('check name of existing company', function (done) {
     run('check-name', {args: existingCompany})
       .then(response => {
         assert.propertyVal(response.data, 'exist', true)
@@ -26,7 +22,7 @@ describe('check-name', function() {
       })
   })
 
-  it('check name of non-existing company (but starts with the same chars)', function(done) {
+  it('check name of non-existing company (but starts with the same chars)', function (done) {
     run('check-name', {args: nonExistingCompany})
       .then(response => {
         assert.propertyVal(response.data, 'exist', false)

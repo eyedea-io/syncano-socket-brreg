@@ -1,11 +1,8 @@
-import _ from 'lodash'
-import crypto from 'crypto'
+/* global describe it */
 import {assert} from 'chai'
 import {run} from 'syncano-test'
 
-
-describe('get', function() {
-
+describe('get', function () {
   let existingCompany = {
     orgNumber: 915642349,
     name: 'Eyedea AS'
@@ -16,8 +13,7 @@ describe('get', function() {
     name: 'Eyeeeedea AS'
   }
 
-
-  it('by org number', function(done) {
+  it('by org number', function (done) {
     run('get', {args: {orgNumber: existingCompany.orgNumber}})
       .then(response => {
         assert.propertyVal(response.data, 'orgNumber', existingCompany.orgNumber)
@@ -31,7 +27,7 @@ describe('get', function() {
       })
   })
 
-  it('by org number (non-existing company)', function(done) {
+  it('by org number (non-existing company)', function (done) {
     run('get', {args: {orgNumber: nonExistingCompany.orgNumber}})
       .then(response => {
         assert.propertyVal(response, 'code', 400)
@@ -39,5 +35,4 @@ describe('get', function() {
         done()
       })
   })
-
 })
