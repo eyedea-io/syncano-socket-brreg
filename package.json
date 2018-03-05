@@ -1,10 +1,10 @@
 {
+  "name": "syncano-socket-brreg",
   "license": "MIT",
-  "dependencies": {
-    "axios": "^0.16.2",
-    "syncano-server": "beta"
-  },
   "scripts": {
+    "build": "npm install && npm run build:src && npm run build:env",
+    "build:src": "sh ./bin/compile",
+    "build:env": "sh ./bin/compile-env",
     "test": "yarn && npm-run-all --parallel test:lint test:e2e:coverage",
     "test:e2e-single": "cross-env NODE_ENV=test mocha -s 1800 --reporter spec --require babel-register --timeout 4000",
     "test:e2e-single:coverage": "nyc --produce-source-map=true cross-env NODE_ENV=test mocha -s 1800 --reporter spec --require babel-register --timeout 4000",
@@ -12,7 +12,13 @@
     "test:e2e:coverage": "nyc --produce-source-map=true npm run test:e2e",
     "test:lint": "standard --fix"
   },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "@syncano/core": "0.9.3"
+  },
   "devDependencies": {
+    "@syncano/test": "canary",
+    "@syncano/test-tools": "canary",
     "babel-core": "^6.26.0",
     "chai": "^4.1.2",
     "mocha": "^3.5.3",
@@ -20,8 +26,7 @@
     "npm-run-all": "^4.1.1",
     "nyc": "^11.2.1",
     "sinon": "^3.3.0",
-    "standard": "^10.0.3",
-    "syncano-test": "^0.1.10"
+    "standard": "^10.0.3"
   },
   "babel": {
     "presets": [
@@ -29,7 +34,7 @@
         "env",
         {
           "targets": {
-            "node": "7"
+            "node": "8"
           }
         }
       ]

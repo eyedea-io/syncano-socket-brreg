@@ -1,5 +1,5 @@
 import axios from 'axios'
-import Syncano from 'syncano-server'
+import Syncano from '@syncano/core'
 
 export default (ctx) => {
   const {response, logger} = Syncano(ctx)
