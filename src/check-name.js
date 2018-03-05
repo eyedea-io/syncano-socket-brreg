@@ -2,7 +2,7 @@ import axios from 'axios'
 import Syncano from '@syncano/core'
 
 export default (ctx) => {
-  const {response, logger} = Syncano(ctx)
+  const {response, logger} = new Syncano(ctx)
   const {debug} = logger('check-name')
   const url = `http://data.brreg.no/enhetsregisteret/enhet.json`
 

@@ -34,7 +34,7 @@ endpoints:
     file: get.js
     parameters:
       orgNumber:
-        type: string
+        type: number
         description: Org. number of the company to get
         example: 98293120821
     response:

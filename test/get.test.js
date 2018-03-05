@@ -5,17 +5,15 @@ import {run, generateMeta} from '@syncano/test'
 describe('get', function () {
   const meta = generateMeta()
   let existingCompany = {
-    orgNumber: 915642349,
-    name: 'Eyedea AS'
+    orgNumber: 915642349
   }
 
   let nonExistingCompany = {
-    orgNumber: 12312312311,
-    name: 'Eyeeeedea AS'
+    orgNumber: 12312312311
   }
 
   it('by org number', function (done) {
-    run('get', {args: {orgNumber: existingCompany.orgNumber}, meta})
+    run('get', {args: existingCompany, meta})
       .then(response => {
         assert.propertyVal(response.data, 'orgNumber', existingCompany.orgNumber)
         assert.property(response.data, 'name')
@@ -29,7 +27,7 @@ describe('get', function () {
   })
 
   it('by org number (non-existing company)', function (done) {
-    run('get', {args: {orgNumber: nonExistingCompany.orgNumber}, meta})
+    run('get', {args: nonExistingCompany, meta})
       .then(response => {
         assert.propertyVal(response, 'code', 400)
         assert.propertyVal(response.data, 'msg', 'Company was not found.')

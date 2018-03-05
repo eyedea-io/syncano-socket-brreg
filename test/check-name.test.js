@@ -5,12 +5,10 @@ import {run, generateMeta} from '@syncano/test'
 describe('check-name', function () {
   const meta = generateMeta()
   let existingCompany = {
-    orgNumber: 915642349,
     name: 'Eyedea AS'
   }
 
   let nonExistingCompany = {
-    orgNumber: 12312312311,
     name: 'Eyeeeedea AS'
   }
 
