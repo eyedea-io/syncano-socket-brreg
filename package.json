@@ -1,8 +1,9 @@
 {
   "license": "MIT",
   "dependencies": {
+    "@syncano/core": "canary",
     "axios": "^0.16.2",
-    "syncano-server": "beta"
+    "babel-cli": "^6.26.0"
   },
   "scripts": {
     "test": "yarn && npm-run-all --parallel test:lint test:e2e:coverage",
@@ -29,7 +30,7 @@
         "env",
         {
           "targets": {
-            "node": "7"
+            "node": "8"
           }
         }
       ]
