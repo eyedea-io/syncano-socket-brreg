@@ -1,6 +1,6 @@
 name: brreg
 description: Integration with The Brønnøysund Register Centre API
-version: 0.0.6
+version: 0.1.1
 runtime: nodejs_v8
 keywords:
   - brreg
@@ -35,7 +35,7 @@ endpoints:
     file: get.js
     parameters:
       orgNumber:
-        type: string
+        type: number
         description: Org. number of the company to get
         example: 98293120821
     response:
