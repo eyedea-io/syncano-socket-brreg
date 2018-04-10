@@ -1,6 +1,6 @@
 name: brreg
 description: Integration with The Brønnøysund Register Centre API
-version: 0.1.1
+version: 0.1.2
 runtime: nodejs_v8
 keywords:
   - brreg
