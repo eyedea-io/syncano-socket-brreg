@@ -48,7 +48,7 @@ endpoints:
                 type: string
               city:
                 type: string
-      success:
+      fail:
         description: Fail
         properties:
           message:
