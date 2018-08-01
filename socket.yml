@@ -1,49 +1,56 @@
 name: brreg
 description: Integration with The Brønnøysund Register Centre API
-version: 0.1.2
 runtime: nodejs_v8
-keywords:
-  - brreg
-  - company
-  - norwegian
-  - registry
 endpoints:
   check-name:
     description: Check if the given company name exist
-    file: check-name.js
-    parameters:
-      name:
-        type: string
-        description: Name of the company to check
-        example: Eyedea AS
-    response:
+    inputs:
+      properties:
+        name:
+          type: string
+          description: Name of the company to check
+          example: Eyedea AS
+    outputs:
       success:
         description: Success
-        parameters:
+        properties:
           exist:
             type: bool
             description: Param which indicates if company exist or not
-      error:
+      fail:
         exit_code: 400
         description: Failed
-        parameters:
+        properties:
           msg:
             type: bool
             description: Error message
   get:
     description: Get company by org number
-    file: get.js
-    parameters:
-      orgNumber:
-        type: number
-        description: Org. number of the company to get
-        example: 98293120821
-    response:
-      mimetype: application/json
-      examples:
-        - exit_code: 200
-          description: Success
-          example: {}
-        - exit_code: 400
-          description: Failed
-          example: {}
+    inputs:
+      properties:
+        orgNumber:
+          type: number
+          description: Org. number of the company to get
+          example: 98293120821
+    outputs:
+      success:
+        description: Success
+        properties:
+          orgNumber:
+            type: number
+          name:
+            type: string
+          address:
+            properties:
+              address:
+                type: string
+              postNumber:
+                type: string
+              city:
+                type: string
+      success:
+        description: Fail
+        properties:
+          message:
+            description: Fail message
+            type: string
