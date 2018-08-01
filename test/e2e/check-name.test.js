@@ -1,5 +1,5 @@
 /* global describe it expect */
-import {run, generateMeta} from '@syncano/test'
+import {run} from '@syncano/test'
 
 describe('check-name', () => {
   let existingCompany = {
