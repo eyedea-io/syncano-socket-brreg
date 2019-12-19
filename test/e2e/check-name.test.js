@@ -3,7 +3,7 @@ import {run} from '@syncano/test'
 
 describe('check-name', () => {
   let existingCompany = {
-    name: 'Eyedea AS'
+    name: 'EYEDEA AS'
   }
 
   let nonExistingCompany = {
@@ -11,13 +11,13 @@ describe('check-name', () => {
   }
 
   it('check name of existing company', async () => {
-    const result = await run('check-name', {args: existingCompany})
+    const result = await run('check-name', {args: {...existingCompany}})
     expect(result).toHaveProperty('code', 200)
     expect(result.data).toHaveProperty('exist', true)
   })
 
   it('check name of non-existing company (but starts with the same chars)', async () => {
-    const result = await run('check-name', {args: nonExistingCompany})
+    const result = await run('check-name', {args: {...nonExistingCompany}})
     expect(result).toHaveProperty('code', 200)
     expect(result.data).toHaveProperty('exist', false)
   })
