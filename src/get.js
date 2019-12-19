@@ -10,6 +10,7 @@ export default async (ctx) => {
   try {
     const resp = await axios({url})
     const company = resp.data
+
     debug('got company:', company)
     response.json({
       orgNumber: company.organisasjonsnummer,
