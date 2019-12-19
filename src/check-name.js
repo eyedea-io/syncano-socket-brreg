@@ -10,12 +10,12 @@ export default async (ctx) => {
     const resp = await axios({
       url: url,
       params: {
-        size:1,
+        size: 1,
         navn: ctx.args.name
       }
     })
     debug(resp.data)
-    const company = resp.data._embedded.enheter;
+    const company = resp.data._embedded.enheter
     if (company.length && company[0].navn === ctx.args.name) {
       debug('Company found!')
       response.json({exist: true})
