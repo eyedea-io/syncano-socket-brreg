@@ -16,7 +16,7 @@
     "Brønnøysundregistrene"
   ],
   "peerDependencies": {
-    "@syncano/cli": "^0.15.1-alpha.34"
+    "@syncano/cli": "0.13.0-alpha.f6ea95d4"
   },
   "dependencies": {
     "@syncano/core": "0.13.0-alpha.f6ea95d4",
@@ -27,7 +27,7 @@
     "build": "npm run build:src && npm run build:env",
     "build:src": "sh ./bin/compile",
     "build:env": "sh ./bin/compile-env",
-    "test": "npm-run-all --parallel test:lint test:e2e",
+    "test": "npm-run-all --parallel test:lint test:audit test:e2e",
     "codecov": "codecov",
     "test:unit": "NODE_ENV=test jest unit/.*\\.test\\.js",
     "test:e2e": "NODE_ENV=test jest e2e/.*\\.test\\.js",
@@ -38,7 +38,6 @@
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.0.0-beta.49",
     "@babel/preset-env": "^7.0.0-beta.49",
-    "@syncano/cli": "^0.15.1-alpha.34",
     "@syncano/test": "0.13.0-alpha.f6ea95d4",
     "@syncano/test-tools": "^0.15.0",
     "babel-core": "^7.0.0-bridge.0",
