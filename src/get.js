@@ -5,7 +5,7 @@ export default async (ctx) => {
   const {response, logger} = new Syncano(ctx)
   const {debug} = logger('get')
   const {orgNumber} = ctx.args
-  const url = `http://data.brreg.no/enhetsregisteret/enhet/${orgNumber}.json`
+  const url = `http://data.brreg.no/enhetsregisteret/api/enheter/${orgNumber}`
 
   try {
     const resp = await axios({url})
