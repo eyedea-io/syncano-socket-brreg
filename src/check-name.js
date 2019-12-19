@@ -4,7 +4,7 @@ import Syncano from '@syncano/core'
 export default async (ctx) => {
   const {response, logger} = new Syncano(ctx)
   const {debug} = logger('check-name')
-  const url = `http://data.brreg.no/enhetsregisteret/enhet.json`
+  const url = `http://data.brreg.no/enhetsregisteret/api/enheter`
 
   try {
     const resp = await axios({
