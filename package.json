@@ -1,6 +1,6 @@
 {
   "name": "@eyedea-sockets/brreg",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "public": true,
   "description": "Integration with The Brønnøysund Register Centre API",
   "author": "Eyedea <hello@eyedea.io> (https://eyedea.io)",
