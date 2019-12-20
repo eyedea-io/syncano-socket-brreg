@@ -15,7 +15,7 @@ export default async (ctx) => {
       orgNumber: parseInt(company.organisasjonsnummer, 10),
       name: company.navn,
       address: {
-        address: company.forretningsadresse.adresse,
+        address: company.forretningsadresse.adresse.join(' '),
         postNumber: company.forretningsadresse.postnummer,
         city: company.forretningsadresse.poststed
       }
