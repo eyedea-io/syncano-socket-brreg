@@ -14,7 +14,7 @@ describe('get', function () {
   it('by org number', async () => {
     const result = await run('get', {args: existingCompany, meta})
 
-    expect(result.data).toHaveProperty('orgNumber', existingCompany.orgNumber.toString())
+    expect(result.data).toHaveProperty('orgNumber', existingCompany.orgNumber)
     expect(result.data).toHaveProperty('name')
     expect(result.data).toHaveProperty('address')
   })
