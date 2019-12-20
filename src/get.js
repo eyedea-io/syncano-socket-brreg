@@ -12,7 +12,7 @@ export default async (ctx) => {
     const company = resp.data
     debug('got company:', company)
     response.json({
-      orgNumber: company.organisasjonsnummer,
+      orgNumber: parseInt(company.organisasjonsnummer, 10),
       name: company.navn,
       address: {
         address: company.forretningsadresse.adresse,
